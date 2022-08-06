@@ -18,8 +18,6 @@ coherence:
   metrics:
     http:
       port: 7002
-  grpc:
-    enabled: false
   proxy:
     enabled: false
   topic:

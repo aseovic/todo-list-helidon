@@ -43,10 +43,6 @@
       <artifactId>jersey-media-sse</artifactId>
     </dependency>
     <dependency>
-      <groupId>io.helidon.tracing</groupId>
-      <artifactId>helidon-tracing-jaeger</artifactId>
-    </dependency>
-    <dependency>
       <groupId>io.helidon.microprofile.grpc</groupId>
       <artifactId>helidon-microprofile-grpc-server</artifactId>
     </dependency>
@@ -89,7 +85,6 @@
         <configuration>
           <executable>java</executable>
           <arguments>
-            <argument>-Dcoherence.metrics.http.enabled=true</argument>
             <argument>-classpath</argument>
             <classpath/>
             <argument>io.helidon.microprofile.cdi.Main</argument>
@@ -129,7 +124,7 @@
                 <ports>
                   <port>1408</port>
                   <port>7001</port>
-                  <port>9612</port>
+                  <port>7002</port>
                 </ports>
                 <creationTime>USE_CURRENT_TIMESTAMP</creationTime>
               </container>
