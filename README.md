@@ -1,16 +1,16 @@
 # Course materials for Coherence To Do List (Helidon) workshop
+          
+This is a complete, final implementation of the application created during the workshop.
+
+To switch to starting point for the workshop, check out the `initial` branch:
+
+```bash
+git checkout initial
+```
 
 ## Build Instructions
 
-1. Initialize `npm` to download all Node dependencies needed for the React UI:
-
-    ```bash
-    pushd src/main/web/react
-    npm install
-    popd   
-    ```           
-
-2. Build the Project
+1. Build the Project
 
 Run the following from the project root directory
 
@@ -30,13 +30,12 @@ mvn exec:exec
   
 Access via http://localhost:7001/
    
-![To Do List - React Client](../../assets/react-client.png)
+![To Do List - React Client](assets/react-client.png)
    
 ## References
 
-* [Coherence Community Edition](https://github.com/oracle/coherence)
-* [Project Helidon](https://helidon.io/)
-* [Coherence Community Home Page](https://coherence.community/)
+* [Coherence CE](https://coherence.community/)
+* [Helidon](https://helidon.io/)
 
 
 
