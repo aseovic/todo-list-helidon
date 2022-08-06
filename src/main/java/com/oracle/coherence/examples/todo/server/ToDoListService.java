@@ -31,10 +31,6 @@ import static com.tangosol.util.Filters.isTrue;
 @ApplicationScoped
 public class ToDoListService
     {
-    //----- constants -------------------------------------------------------
-
-    private static final String MESSAGE = "Unable to find task with id ";
-
     //----- data members ----------------------------------------------------
 
     @Inject
@@ -84,7 +80,7 @@ public class ToDoListService
         {
         return Optional
                 .ofNullable(tasks.get(id))
-                .orElseThrow(() -> new NotFoundException(MESSAGE + id));
+                .orElseThrow(() -> new TaskNotFoundException(id));
         }
 
     /**
@@ -100,7 +96,7 @@ public class ToDoListService
         {
         return Optional
                 .ofNullable(tasks.removeById(id, true))
-                .orElseThrow(() -> new NotFoundException(MESSAGE + id));
+                .orElseThrow(() -> new TaskNotFoundException(id));
         }
 
     /**
@@ -128,7 +124,7 @@ public class ToDoListService
         Task task = tasks.update(id, Task::setDescription, description);
         return Optional
                 .ofNullable(task)
-                .orElseThrow(() -> new NotFoundException(MESSAGE + id));
+                .orElseThrow(() -> new TaskNotFoundException(id));
         }
 
     /**
@@ -146,6 +142,6 @@ public class ToDoListService
         Task task = tasks.update(id, Task::setCompleted, completed);
         return Optional
                 .ofNullable(task)
-                .orElseThrow(() -> new NotFoundException(MESSAGE + id));
+                .orElseThrow(() -> new TaskNotFoundException(id));
         }
     }
