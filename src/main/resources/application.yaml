@@ -13,6 +13,7 @@ server:
 
 coherence:
   cluster: todo-list
+  role: HelidonApp
   serializer: java
   metrics:
     http:
