@@ -2,7 +2,7 @@
           
 This is a complete, final implementation of the application created during the workshop.
 
-To switch to starting point for the workshop, check out the `initial` branch:
+To switch to the starting point for the workshop, check out the `initial` branch:
 
 ```bash
 git checkout initial
