@@ -140,17 +140,24 @@ public class ToDoListRestApi
     @PUT
     @Path("{id}")
     @Consumes(APPLICATION_JSON)
-    public Task updateTask(@PathParam("id") String id, JsonObject task)
+    public Task updateTask(@PathParam("id") String id, Task task)
         {
-        if (task.containsKey("description"))
+        Task result = null;
+
+        String  description = task.getDescription();
+        Boolean completed   = task.getCompleted();
+
+        if (description != null)
             {
-            return api.updateDescription(id, task.getString("description"));
+            result = api.updateDescription(id, description);
             }
-        else if (task.containsKey("completed"))
+        else if (completed != null)
             {
-            return api.updateCompletionStatus(id, task.getBoolean("completed"));
+            result = api.updateCompletionStatus(id, completed);
             }
 
-        throw new IllegalArgumentException("either description or completion status must be specified");
+        return result == null
+               ? api.findTask(id)
+               : result;
         }
     }
