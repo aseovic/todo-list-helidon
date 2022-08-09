@@ -61,6 +61,19 @@ query {
   }
 }
 ```
+ 
+To create a new task, type:
+```graphql
+mutation {
+  createTask(description: "My GraphQL Task") {
+    id
+    description
+    completed
+    createdAt
+    createdAtDate
+  } 
+}
+```
 
 ## References
 
