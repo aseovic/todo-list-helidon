@@ -23,21 +23,5 @@ import javax.inject.Inject;
 @ApplicationScoped
 public class TaskRepository extends AbstractRepository<String, Task>
     {
-    @Inject
-    private NamedMap<String, Task> tasks;
-
-    protected NamedMap<String, Task> getMap()
-        {
-        return tasks;
-        }
-
-    protected String getId(Task task)
-        {
-        return task.getId();
-        }
-
-    protected Class<? extends Task> getEntityType()
-        {
-        return Task.class;
-        }
+    // TODO: add implementation here
     }
